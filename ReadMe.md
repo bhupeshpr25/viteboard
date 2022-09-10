@@ -13,9 +13,3 @@ viteboard is a whiteboard project which allows users to draw on a board using di
 - Vite with Typescript
 - Redux
 - Vanilla-Extract CSS
-
-## Features
-
-- undo and redo buttons
-- export to png using export button
-- more than 20 color shades
