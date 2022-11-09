@@ -11,5 +11,9 @@ viteboard is a whiteboard project which allows users to draw on a board using di
 ## Technologies used
 
 - Vite with Typescript
-- Redux
+- Redux with Redux-Toolkit
 - Vanilla-Extract CSS
+
+## Demo
+
+https://viteboard.vercel.app/
