@@ -17,15 +17,20 @@ import { historyIndexSelector } from "../../modules/historyIndex/reducer";
 import { useCanvas } from "../../CanvasContext";
 import * as styles from "./Canvas.css";
 
+//canvas size constants
 const WIDTH = 1200;
 const HEIGHT = 700;
 
 export const Canvas = () => {
+  //get canvasRef and pass to <canvas>
   const canvasRef = useCanvas();
+
+  //helper function to get canvas and return an object with canvas and context
   const getCanvasWithContext = (canvas = canvasRef.current) => {
     return { canvas, context: canvas?.getContext("2d") };
   };
   const currentStroke = useSelector(currentStrokeSelector);
+  // get state and return a boolean from the state
   const isDrawing = !!currentStroke.points.length;
   const historyIndex = useSelector(historyIndexSelector);
   const strokes = useSelector(strokesSelector);
@@ -55,6 +60,7 @@ export const Canvas = () => {
     });
   }, [historyIndex]);
 
+  //get canvas with context and set canvas size
   useEffect(() => {
     const { canvas, context } = getCanvasWithContext();
     if (!canvas || !context) {
@@ -71,6 +77,9 @@ export const Canvas = () => {
     clearCanvas(canvas);
   }, []);
 
+  //define handlers for startDrawing, endDrawing and draw events and pass in <canvas>
+
+  //for handling mouse press
   const startDrawing = ({
     nativeEvent,
   }: React.MouseEvent<HTMLCanvasElement>) => {
@@ -78,12 +87,14 @@ export const Canvas = () => {
     dispatch(beginStroke(offsetX, offsetY));
   };
 
+  //for handling mouse lift
   const endDrawing = () => {
     if (isDrawing) {
       dispatch(endStroke(historyIndex, currentStroke));
     }
   };
 
+  //for handling mouse movement
   const draw = ({ nativeEvent }: React.MouseEvent<HTMLCanvasElement>) => {
     if (!isDrawing) {
       return;

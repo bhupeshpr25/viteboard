@@ -1,5 +1,6 @@
 import { Point } from "./types";
 
+//method which accepts context, points and colors
 export const drawStroke = (
   context: CanvasRenderingContext2D,
   points: Point[],
@@ -18,7 +19,9 @@ export const drawStroke = (
   context.closePath();
 };
 
+//function to clear canvas
 export const clearCanvas = (canvas: HTMLCanvasElement) => {
+  //get canvas context
   const context = canvas.getContext("2d");
   if (!context) {
     return;
@@ -27,6 +30,7 @@ export const clearCanvas = (canvas: HTMLCanvasElement) => {
   context.fillRect(0, 0, canvas.width, canvas.height);
 };
 
+//create canvas rectangle
 export const setCanvasSize = (
   canvas: HTMLCanvasElement,
   width: number,
@@ -39,6 +43,7 @@ export const setCanvasSize = (
   canvas.getContext("2d")?.scale(2, 2);
 };
 
+//gets blob from the canvas
 export const getCanvasImage = (
   canvas: HTMLCanvasElement | null
 ): Promise<null | Blob> => {

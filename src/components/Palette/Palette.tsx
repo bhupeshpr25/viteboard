@@ -2,6 +2,7 @@ import { useDispatch } from "react-redux";
 import { setStrokeColor } from "../../modules/currentStroke/actions";
 import * as styles from "./Palette.css";
 
+//define color palette
 const colors = [
   "#1a1a1a",
   "#808b96",

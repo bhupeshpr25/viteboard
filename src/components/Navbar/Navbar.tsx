@@ -12,6 +12,7 @@ export const Navbar = () => {
 
   const canvasRef = useCanvas();
 
+  //exporting drawing as image
   const exportToFile = async () => {
     const file = await getCanvasImage(canvasRef.current);
     if (!file) {
