@@ -1,0 +1,24 @@
+{
+  "background_color": "#ffffff",
+  "description": "whiteboard app",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "viteboard",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "viteboard",
+  "start_url": "/",
+  "theme_color": "#ffffff",
+  "categories": [
+    "entertainment"
+  ],
+  "screenshots": [],
+  "icons": [
+    {
+      "src": "/icon.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    }
+  ],
+  "shortcuts": []
+}
